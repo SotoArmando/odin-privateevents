@@ -1,0 +1,43 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+@import "bootstrap";
+
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
+body{
+  background-image: linear-gradient( to right , rgba(50, 50, 50, 0.37),rgba(211, 211, 211, 0.18)), url("https://cdn.nimbusthemes.com/2017/09/09233341/Free-Nature-Backgrounds-Seaport-During-Daytime-by-Pexels.jpeg") ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  ul{
+    padding: 0;
+  }
+  h1{
+    text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+    text-align: center;
+  }
+  p{
+    text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+  }
+}
+
+.event{
+  padding: 1em;
+  box-shadow: 0 7px 14px -3px rgba(45, 35, 66, 0.3), 0 2px 4px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #cfd1e3;
+  background: rgba(255, 255, 255, 0.19);
+  border-radius: 2em;
+  list-style: none;
+  margin-bottom: 2em;
+
+}

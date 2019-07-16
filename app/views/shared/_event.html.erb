@@ -1,0 +1,7 @@
+<li class="event text-center" >
+  <h3>HOSTED BY: <%= find_user(event.creator_id).name %></h3>
+  <h4> TITLE:  <%= event.title %></h4>
+  <h4>  ABOUT:  <%= event.description %></h4>
+  <small> DATE:  <%=  event.date %></small>
+   <%= link_to 'Attend', event_path(event),method: :put %>
+</li>

@@ -1,0 +1,8 @@
+
+<div class="container">
+  <h1>All Events</h1>
+  <h5>Welcome Home <%= current_user.name %>  </h5>
+  <ul>
+      <%= render partial: 'shared/event', collection: @events %>
+  </ul>
+</div>

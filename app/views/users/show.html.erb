@@ -1,1 +1,23 @@
-<%= @user.name %>
+
+
+<div class="container">
+ <h1>Welcome Home <%= current_user.name %>  </h1>
+  <div class="row">
+    <div class="col-md-6">
+      <ul>
+
+        <%= render partial: 'shared/event', collection: @user_events %>
+
+      </ul>
+
+    </div>
+
+    <div class="col-md-6">
+      <%= render 'events/form' %>
+    </div>
+    </div>
+
+  </div>
+
+
+</div>

@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :get_event , only: [:show, :new, :update]
+  before_action :authenticated!, only: [:update, :create]
   def home
     @events = Event.all
   end

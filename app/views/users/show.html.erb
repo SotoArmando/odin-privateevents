@@ -3,16 +3,28 @@
 <div class="container">
  <h1>Welcome Home <%= current_user.name %>  </h1>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
+    <h2 class="text-center">Past</h2>
       <ul>
-
-        <%= render partial: 'shared/event', collection: @user_events %>
-
+        <% if @user.events.any? %>
+          <%= render partial: 'shared/event', collection: @user_events.past %>
+        <% else %>
+          <h3> You no events</h3>
+        <%end %>
       </ul>
-
+    </div>
+    <div class="col-md-4">
+    <h2 class="text-center">Upcoming</h2>
+      <ul>
+        <% if @user.events.any? %>
+        <%= render partial: 'shared/event', collection: @user_events.up_coming %>
+        <% else %>
+          <h3> You no events</h3>
+      <%end %>
+      </ul>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-4">
       <%= render 'events/form' %>
     </div>
     </div>

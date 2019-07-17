@@ -13,16 +13,31 @@ require 'faker'
 
 end
 
-15.times do
+5.times do
   first =  User.first.events.build(title: Faker::Games::Pokemon.name,
                           description: Faker::Movies::BackToTheFuture.quote, date: 1.month.ago)
 
   first.save
 end
 
+5.times do
+  first =  User.first.events.build(title: Faker::Games::Pokemon.name,
+                                   description: Faker::Movies::BackToTheFuture.quote, date: Time.now + (2*7*24*60*60))
 
-15.times do
+  first.save
+end
+
+
+
+
+10.times do
   second = User.second.events.build(title: Faker::Games::Pokemon.name,
                           description: Faker::Movies::BackToTheFuture.quote, date: 1.month.ago)
     second.save
+end
+
+10.times do
+  second = User.second.events.build(title: Faker::Games::Pokemon.name,
+                                    description: Faker::Movies::BackToTheFuture.quote, date: Time.now + (2*7*24*60*60) )
+  second.save
 end

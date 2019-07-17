@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   end
 
   def show
-
+    @event = Event.find(params[:id])
   end
 
   def new
@@ -20,8 +20,8 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event.attendees.build(name: current_user.name )
-    if @event.attendees
+
+    if  @event.attendees << current_user
       flash[:success] = "You are now attending this event"
       redirect_to '/'
     end

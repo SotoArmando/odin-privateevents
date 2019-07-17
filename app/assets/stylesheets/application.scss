@@ -19,7 +19,11 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: white;
+  color: white !important;
+  #nav{
+    background-color: rgba(46, 47, 48, 0.18) !important;
+    color: white !important;
+  }
   ul{
     padding: 0;
   }

@@ -3,5 +3,9 @@
   <h4> TITLE:  <%= event.title %></h4>
   <h4>  ABOUT:  <%= event.description %></h4>
   <small> DATE:  <%=  event.date %></small>
-   <%= link_to 'Attend', event_path(event),method: :put %>
+
+  <% if attending_event(event) %>
+    <% else %>
+    <%= link_to 'Attend', event_path(event),method: :put , class: 'btn btn-success'%>
+    <%end %>
 </li>

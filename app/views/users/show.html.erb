@@ -6,13 +6,21 @@
     <div class="col-md-4">
     <h2 class="text-center">Past</h2>
       <ul>
-        <%= render partial: 'shared/event', collection: @user_events_p %>
+        <% if @user.events.any? %>
+          <%= render partial: 'shared/event', collection: @user_events.past %>
+        <% else %>
+          <h3> You no events</h3>
+        <%end %>
       </ul>
     </div>
     <div class="col-md-4">
     <h2 class="text-center">Upcoming</h2>
       <ul>
-        <%= render partial: 'shared/event', collection: @user_events %>
+        <% if @user.events.any? %>
+        <%= render partial: 'shared/event', collection: @user_events.up_coming %>
+        <% else %>
+          <h3> You no events</h3>
+      <%end %>
       </ul>
     </div>
 

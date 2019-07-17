@@ -5,15 +5,19 @@ class SessionsController < ApplicationController
             log_in @session
             flash[:success] = 'welcome'
             puts current_user
-            redirect_to '/'
+            redirect_to root_path
+        else
+            flash[:danger] = "There is no #{params[:session][:name]}"
+            render :new
         end
     end
     def new
 
     end
 
-
-
-
+    def destroy
+        logout
+        redirect_to root_path
+    end
 
 end

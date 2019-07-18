@@ -3,13 +3,26 @@
   <h4> TITLE:  <%= event.title %></h4>
   <h4>  ABOUT:  <%= event.description %></h4>
   <small class="d-block"> DATE:  <%=  event.date %></small>
+  <br/>
+  <h5 >People who are attending</h5>
   <% if root_url %>
-    <%else %>
+       <% if event.attendees.any? %>
+         <%= select_tag(:attendees,
+                        options_for_select(event_attendees(event)),
+                        class:'custom-select transparent text-white', size:'3' ) %>
+        <%else %>
+         <h5 class="text-danger"> No one is Attending/Attended this event!</h5>
+        <%end %>
+
+  <%else %>
     <%= select_tag(:user_id, options_for_select(@users_names)) %>
   <%end %>
 
-  <% if attending_event(event) %>
+   <% if attending_event(event)  %>
     <% else %>
-    <%= link_to 'Attend', event_path(event),method: :put , class: 'btn btn-success'%>
+      <% if event.finished? %>
+      <%= link_to 'Attend', event_path(event),method: :put , class: 'btn btn-success'%>
+      <%end %>
+
     <%end %>
 </li>

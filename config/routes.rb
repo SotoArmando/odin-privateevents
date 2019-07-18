@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'events#home'
+  root 'events#index'
   get  '/signup',  to: 'users#new'
   post  '/signup',  to: 'users#create'
   get  '/signin',  to: 'sessions#new'

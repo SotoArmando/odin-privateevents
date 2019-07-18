@@ -7,9 +7,10 @@
     <h2 class="text-center">Past</h2>
       <ul>
         <% if @user.events.any? %>
-          <%= render partial: 'shared/event', collection: @user_events.past %>
+          <%= render partial: 'event', collection: @user_events.past %>
+
         <% else %>
-          <h3> You no events</h3>
+          <h3> You have no events</h3>
         <%end %>
       </ul>
     </div>
@@ -17,9 +18,9 @@
     <h2 class="text-center">Upcoming</h2>
       <ul>
         <% if @user.events.any? %>
-        <%= render partial: 'shared/event', collection: @user_events.up_coming %>
+        <%= render partial: 'event', collection: @user_events.up_coming %>
         <% else %>
-          <h3> You no events</h3>
+          <h3> You  have no events</h3>
       <%end %>
       </ul>
     </div>

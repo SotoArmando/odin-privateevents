@@ -3,13 +3,9 @@
   <h4> TITLE:  <%= event.title %></h4>
   <h4>  ABOUT:  <%= event.description %></h4>
   <small class="d-block"> DATE:  <%=  event.date %></small>
-  <% if root_url %>
-    <%else %>
     <%= select_tag(:user_id, options_for_select(@users_names)) %>
-  <%end %>
-
   <% if attending_event(event) %>
-    <% else %>
-    <%= link_to 'Attend', event_path(event),method: :put , class: 'btn btn-success'%>
-    <%end %>
+  <% else %>
+    <%= link_to 'Attend', event_path(event),method: :put , class: 'btn btn-success d-block'%>
+  <%end %>
 </li>

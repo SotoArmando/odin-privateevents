@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     end
 
     def user_attending_events
-        @attending  = EventAttendance.where(attendee_id:1).map {|a| a.attended_event_id }
+        @attending  = EventAttendance.where(attendee_id:current_user.id).map {|a| a.attended_event_id }
         @attending_events = @attending.map { |e| Event.find(e) }
     end
 end

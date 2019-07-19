@@ -1,0 +1,73 @@
+
+
+<div class="container">
+ <h1>Welcome Home <%= current_user.name %>  </h1>
+  <div class="row">
+
+    <div class="col-md-3">
+      <h2 class="text-center">Your events</h2>
+      <ul>
+        <% if @user_events.any? %>
+          <%= render partial: 'event', collection: @user_events%>
+
+        <% else %>
+          <h3> You have not created any events</h3>
+        <%end %>
+      </ul>
+    </div>
+
+    <div class="col-md-3">
+    <h2 class="text-center">Past</h2>
+      <% if @attending_events.any? %>
+      <ul>
+
+          <% @attending_events.each do |event| %>
+              <% if event.past? %>
+            <li class="event text-center" >
+              <h3>HOSTED BY: <%= find_user(event.creator_id).name %></h3>
+              <p> TITLE:  <%= event.title %></p>
+              <p>  ABOUT:  <%= event.description %></p>
+              <small class="d-block"> DATE:  <%=  event.date %></small>
+            </li>
+              <%end %>
+
+
+            <% end %>
+          <%else %>
+          <h4>No Have not attend an events Yet.</h4>
+        <% end %>
+      </ul>
+    </div>
+
+
+
+    <div class="col-md-3">
+    <h2 class="text-center">Upcoming</h2>
+      <% if @attending_events.any? %>
+      <ul>
+        <% @attending_events.each do |event| %>
+        <% if event.up_coming? %>
+          <li class="event text-center" >
+            <h3>HOSTED BY: <%= find_user(event.creator_id).name %></h3>
+            <p> TITLE:  <%= event.title %></p>
+            <p>  ABOUT:  <%= event.description %></p>
+            <small class="d-block"> DATE:  <%=  event.date %></small>
+          </li>
+        <%end %>
+        <%end %>
+
+      </ul>
+        <%else %>
+        <h4>No Have not attend an events Yet.</h4>
+      <%end %>
+    </div>
+
+    <div class="col-md-3">
+      <%= render 'events/form' %>
+    </div>
+    </div>
+
+  </div>
+
+
+</div>

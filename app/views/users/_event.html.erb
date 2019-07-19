@@ -1,0 +1,11 @@
+<li class="event text-center" >
+  <h3>HOSTED BY: <%= find_user(event.creator_id).name %></h3>
+  <p> TITLE:  <%= event.title %></p>
+  <p>  ABOUT:  <%= event.description %></p>
+  <small class="d-block"> DATE:  <%=  event.date %></small>
+
+  <% if attending_event(event) %>
+  <% else %>
+    <%= link_to 'Attend', event_path(event),method: :put , class: 'btn btn-success d-block'%>
+  <%end %>
+</li>

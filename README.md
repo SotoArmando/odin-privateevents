@@ -1,24 +1,17 @@
-# README
+# Private Events 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Events application
 
-Things you may want to cover:
+### Created By 
 
-* Ruby version
+[Isaac](https://github.com/ispirett)  and [Armando](https://github.com/SotoArmando)
 
-* System dependencies
+### Run Project
 
-* Configuration
+* Clone Repo
+* Run these commands 
+*  ``` bundle install ```
+* ``` rake db:migrate ```
+* ``` rails server```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+###

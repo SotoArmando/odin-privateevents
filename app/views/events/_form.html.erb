@@ -1,0 +1,9 @@
+<%= form_for([@user, @event]) do |f| %>
+  <p> <%= f.label :title %>  </p>
+  <p> <%= f.text_field :title, class: 'form-control ' %> </p>
+  <p> <%= f.label :description %>  </p>
+  <p> <%= f.text_area :description, class: 'form-control ' %>  </p>
+  <p> <%= f.label  :date %> </p>
+  <p> <%= f.date_field :date, class: 'form-control '  %> </p>
+  <%= f.submit 'Create Event' , class: 'btn btn-success' %>
+<%end %>

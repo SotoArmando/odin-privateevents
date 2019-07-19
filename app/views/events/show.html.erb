@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>All Events</h1>
+  <h5>Welcome Home <%= current_user.name %>  </h5>
+  <ul>
+
+    <li class="event text-center">
+      <h3>HOSTED BY: <%= find_user(@event.creator_id).name %></h3>
+      <h4> TITLE:  <%= @event.title %></h4>
+      <h4>  ABOUT:  <%= @event.description %></h4>
+      <small> DATE:  <%=  @event.title %></small>
+    </li>
+  </ul>
+</div>
